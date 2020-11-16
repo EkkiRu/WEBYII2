@@ -1,0 +1,45 @@
+﻿===========================================
+Log started at 08.04.2020 21:55:26
+===========================================
+Application name: dbForge Studio 2019 for MySQL
+Connection string: User Id=root;Host=localhost;Character Set=utf8
+
+Objects included in the script (Tables):
+classroom
+day
+gender
+gruppa
+lesson_num
+lesson_plan
+otdel
+role
+schedule
+special
+student
+subject
+teacher
+user
+
+Objects included in the script (Views):
+
+Objects included in the script (Procedures):
+
+Objects included in the script (Functions):
+
+Objects included in the script (Events):
+Tables with data included in the script:
+role (4 rows)
+gender (2 rows)
+user (1 rows)
+otdel (3 rows)
+special (5 rows)
+lesson_num (5 rows)
+day (6 rows)
+
+Objects included in the script (Triggers):
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 08.04.2020 21:55:28
+===========================================
