@@ -5,18 +5,7 @@ namespace app\models;
 use Yii;
 use yii\db\ActiveRecord;
 
-/**
- * This is the model class for table "subject".
- *
- * @property int $subject_id
- * @property string $name
- * @property int $otdel_id
- * @property int $hours
- * @property int $active
- *
- * @property LessonPlan[] $lessonPlans
- * @property Otdel $otdel
- */
+
 class Subject extends ActiveRecord
 {
     public function loadAndSave($bodyParams){
@@ -79,21 +68,13 @@ class Subject extends ActiveRecord
         ];
     }
 
-    /**
-     * Gets query for [[LessonPlans]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
+
     public function getLessonPlans()
     {
         return $this->hasMany(LessonPlan::className(), ['subject_id' => 'subject_id']);
     }
 
-    /**
-     * Gets query for [[Otdel]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
+
     public function getOtdel()
     {
         return $this->hasOne(Otdel::className(), ['otdel_id' => 'otdel_id']);

@@ -47,7 +47,7 @@ class ScheduleController extends BaseController
         }
         return $schedule;
     }
-    //мб это сработает. хотя мне кажется что нет.
+
     public function actionDelete($id){
         Schedule::deleteAll($id);
     }

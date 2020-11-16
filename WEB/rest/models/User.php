@@ -5,25 +5,7 @@ namespace app\models;
     use yii\web\IdentityInterface;
     use yii\db\ActiveRecord;
 
-/**
- * This is the model class for table "user".
- *
- * @property int $user_id
- * @property string $lastname
- * @property string $firstname
- * @property string|null $patronymic
- * @property string|null $login
- * @property string|null $pass
- * @property string|null $token
- * @property int|null $expired_at
- * @property int $gender_id
- * @property string|null $birthday
- * @property int $active
- *
- * @property Student $student
- * @property Teacher $teacher
- * @property Gender $gender
- */
+
 class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
@@ -170,40 +152,22 @@ class User extends ActiveRecord implements IdentityInterface
         ];
     }
 
-    /**
-     * Gets query for [[Student]].
-     *
-     * @return \yii\db\ActiveQuery|\app\models\queries\StudentQuery
-     */
     public function getStudent()
     {
         return $this->hasOne(Student::className(), ['user_id' => 'user_id']);
     }
 
-    /**
-     * Gets query for [[Teacher]].
-     *
-     * @return \yii\db\ActiveQuery|\app\models\queries\TeacherQuery
-     */
     public function getTeacher()
     {
         return $this->hasOne(Teacher::className(), ['user_id' => 'user_id']);
     }
 
-    /**
-     * Gets query for [[Gender]].
-     *
-     * @return \yii\db\ActiveQuery|\app\models\queries\GenderQuery
-     */
     public function getGender()
     {
         return $this->hasOne(Gender::className(), ['gender_id' => 'gender_id']);
     }
 
-    /**
-     * {@inheritdoc}
-     * @return \app\models\queries\UserQuery the active query used by this AR class.
-     */
+
     public static function find()
     {
         return new \app\models\queries\UserQuery(get_called_class());
